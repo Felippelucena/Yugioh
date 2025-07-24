@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="pages/Partida/style.css">
+
+<div class="container-fluid py-4">
+  <div class="game-container p-4 mx-auto">
+    <!-- Tela de Início -->
+    <div id="start-menu" class="start-screen p-5 mb-4">
+      <h2 class="h3 mb-3">Bem-vindo ao Duelo!</h2>
+      <p class="lead mb-4">Prepare-se para enfrentar a IA em um duelo épico!</p>
+      <button id="start-game-btn" class="btn start-btn">🎮 INICIAR JOGO</button>
+    </div>
+    
+    <!-- Tabuleiro do Jogo -->
+    <div id="game-board" style="display: none">
+      <div class="row">
+        <div class="col-5">
+          <!-- Estatísticas do Jogo -->
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <div class="stats-card p-3 mb-1 text-center">
+                <div class="phase-indicator h5 mb-1">
+                  ⚡ Fase:
+                  <span id="current-phase" class="badge bg-primary">Preparação</span>
+                </div>
+                <div class="h6">
+                  🎯 Turno:
+                  <span id="current-turn" class="badge bg-info">Jogador</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stats-card p-3 mb-1">
+                <h6 class="text-primary mb-1">💖 Life Points</h6>
+                <div class="d-flex justify-content-between">
+                  <span class="fw-bold text-success">
+                    Jogador:
+                    <span id="player-lp" class="badge bg-success">8000</span>
+                  </span>
+                  <span class="fw-bold text-danger">
+                    Oponente:
+                    <span id="opponent-lp" class="badge bg-danger">8000</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="stats-card p-3 mb-3 text-center">
+                <h6 class="text-muted mb-2">🃏 Cartas na Mão</h6>
+                <div class="h5">
+                  <span id="opponent-hand-count" class="badge bg-secondary">5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Área de Fusão -->
+          <div class="fusion-area p-3 mb-3">
+            <h5 class="text-center mb-2">🔥 Área de Fusão</h5>
+            <div class="d-flex justify-content-center gap-2 mb-2" id="fusion-area"></div>
+            <div class="text-center">
+              <button id="fusion-btn" class="btn btn-warning me-2">⚡ Fusionar</button>
+              <button id="clear-fusion-btn" class="btn btn-outline-secondary">🗑️ Limpar</button>
+            </div>
+          </div>
+          <!-- Log de Batalha -->
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h6 class="mb-0">📜 Log de Batalha</h6>
+                </div>
+                <div class="card-body p-2">
+                  <div class="battle-log p-2" id="battle-log"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-7">
+          <!-- Campo de Batalha -->
+          <div class="row">
+            <div class="col-12">
+              <!-- Área do Oponente -->
+              <div class="opponent-area p-3 mb-4">
+                <h4 class="text-center mb-3">🤖 Campo do Oponente</h4>
+                <div class="d-flex justify-content-center gap-2" id="opponent-field">
+                  <div class="card-slot" data-slot="0"></div>
+                  <div class="card-slot" data-slot="1"></div>
+                  <div class="card-slot" data-slot="2"></div>
+                  <div class="card-slot" data-slot="3"></div>
+                  <div class="card-slot" data-slot="4"></div>
+                </div>
+              </div>
+
+              <!-- Área do Jogador -->
+              <div class="player-area p-3">
+                <h4 class="text-center mb-3">👤 Seu Campo</h4>
+
+                <!-- Campo de Monstros -->
+                <div class="d-flex justify-content-center gap-2 mb-3" id="player-field">
+                  <div class="card-slot" data-slot="0"></div>
+                  <div class="card-slot" data-slot="1"></div>
+                  <div class="card-slot" data-slot="2"></div>
+                  <div class="card-slot" data-slot="3"></div>
+                  <div class="card-slot" data-slot="4"></div>
+                </div>
+
+                <!-- Mão do Jogador -->
+                <div class="mb-3">
+                  <h6 class="text-center mb-2">🃏 Sua Mão</h6>
+                  <div class="d-flex justify-content-center gap-1 flex-wrap" id="player-hand"></div>
+                </div>
+
+                <!-- Controles do Jogo -->
+                <div class="text-center">
+                  <button id="summon-btn" class="btn btn-game me-2">🎭 Invocar</button>
+                  <button id="attack-btn" class="btn btn-battle me-2">⚔️ Batalhar</button>
+                  <button id="end-turn-btn" class="btn btn-outline-primary">⏭️ Finalizar Turno</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

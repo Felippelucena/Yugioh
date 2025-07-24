@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "dataCriacao": "12/07/2025, 15:52:13",
+    "nome": "Felp",
+    "senha": 12358,
+    "deckatual": "deckA",
+    "decks": {"deckA":[["cartaA", 2],["cartaB", 1]]},
+    "colecao": [["cartaA", 2], ["cartaB", 1]],
+    "estatisticas": [],
+    "campanha": []
+  },
+  {
+    "id": 2,
+    "dataCriacao": "12/07/2025, 15:52:13",
+    "nome": "Claiton",
+    "senha": 3369,
+    "deckatual": "deckA",
+    "decks": {"deckA":[["cartaA", 2],["cartaB", 1]]},
+    "colecao": [["cartaA", 2], ["cartaB", 1]],
+    "estatisticas": [],
+    "campanha": []
+  }
+]
