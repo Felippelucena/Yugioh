@@ -1,59 +1,61 @@
-<link rel="stylesheet" href="pages/Partida/style.css">
+<link rel="stylesheet" href="pages/Partida/style.css" />
 
-<div class="container-fluid py-4">
-  <div class="game-container p-4 mx-auto">
-    <!-- Tela de Início -->
-    <div id="start-menu" class="start-screen p-5 mb-4">
-      <h2 class="h3 mb-3">Bem-vindo ao Duelo!</h2>
-      <p class="lead mb-4">Prepare-se para enfrentar a IA em um duelo épico!</p>
-      <button id="start-game-btn" class="btn start-btn">🎮 INICIAR JOGO</button>
-    </div>
-    
+<div class="container-fluid py-2">
+  <div class="game-container p-2 mx-auto">
     <!-- Tabuleiro do Jogo -->
-    <div id="game-board" style="display: none">
+    <div id="game-board">
       <div class="row">
         <div class="col-5">
           <!-- Estatísticas do Jogo -->
           <div class="row mb-2">
             <div class="col-md-12">
-              <div class="stats-card p-3 mb-1 text-center">
+              <div class="stats-card p-1 mb-1 text-center">
                 <div class="phase-indicator h5 mb-1">
-                  ⚡ Fase:
+                  Fase:
                   <span id="current-phase" class="badge bg-primary">Preparação</span>
                 </div>
                 <div class="h6">
-                  🎯 Turno:
+                  Turno:
                   <span id="current-turn" class="badge bg-info">Jogador</span>
                 </div>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="stats-card p-3 mb-1">
-                <h6 class="text-primary mb-1">💖 Life Points</h6>
-                <div class="d-flex justify-content-between">
-                  <span class="fw-bold text-success">
-                    Jogador:
+              <div class="stats-card p-1 mb-1 text-center">
+                <h5 class="fw-bold text-primary mb-1">Jogador:</h5>
+
+                  <h6 class="text-success">
+                    Vida:
                     <span id="player-lp" class="badge bg-success">8000</span>
-                  </span>
-                  <span class="fw-bold text-danger">
-                    Oponente:
-                    <span id="opponent-lp" class="badge bg-danger">8000</span>
-                  </span>
-                </div>
+                  </h6>
+                  <h6 class="text-muted mb-2">
+                    Cartas restantes:
+                    <span id="player-deck-count" class="badge bg-secondary">40</span>
+                  </h6>
+
               </div>
             </div>
 
             <div class="col-md-6">
-              <div class="stats-card p-3 mb-3 text-center">
-                <h6 class="text-muted mb-2">🃏 Cartas na Mão</h6>
-                <div class="h5">
+              <div class="stats-card p-1 mb-1 text-center">
+                <h5 class="fw-bold text-danger">Oponente:</h5>
+                <span class="text-danger mb-2">
+                  Vida:
+                  <span id="opponent-lp" class="badge bg-danger">8000</span>
+                </span>
+                <h6 class="text-muted mb-2">
+                  Cartas na Mão:
                   <span id="opponent-hand-count" class="badge bg-secondary">5</span>
-                </div>
+                </h6>
+                <h6 class="text-muted mb-2">
+                  Cartas restantes:
+                  <span id="opponent-deck-count" class="badge bg-secondary">40</span>
+                </h6>
               </div>
             </div>
           </div>
-          <!-- Área de Fusão -->
-          <div class="fusion-area p-3 mb-3">
+          <!-- Área de Fusão 
+          <div class="fusion-area p-1 mb-1">
             <h5 class="text-center mb-2">🔥 Área de Fusão</h5>
             <div class="d-flex justify-content-center gap-2 mb-2" id="fusion-area"></div>
             <div class="text-center">
@@ -61,6 +63,7 @@
               <button id="clear-fusion-btn" class="btn btn-outline-secondary">🗑️ Limpar</button>
             </div>
           </div>
+          -->
           <!-- Log de Batalha -->
           <div class="row mt-4">
             <div class="col-12">
@@ -81,8 +84,8 @@
           <div class="row">
             <div class="col-12">
               <!-- Área do Oponente -->
-              <div class="opponent-area p-3 mb-4">
-                <h4 class="text-center mb-3">🤖 Campo do Oponente</h4>
+              <div class="opponent-area p-1 mb-1">
+                <h4 class="text-center mb-1">🤖 Campo do Oponente</h4>
                 <div class="d-flex justify-content-center gap-2" id="opponent-field">
                   <div class="card-slot" data-slot="0"></div>
                   <div class="card-slot" data-slot="1"></div>
@@ -93,11 +96,11 @@
               </div>
 
               <!-- Área do Jogador -->
-              <div class="player-area p-3">
-                <h4 class="text-center mb-3">👤 Seu Campo</h4>
+              <div class="player-area p-1">
+                <h4 class="text-center mb-1">👤 Seu Campo</h4>
 
                 <!-- Campo de Monstros -->
-                <div class="d-flex justify-content-center gap-2 mb-3" id="player-field">
+                <div class="d-flex justify-content-center gap-2 mb-1" id="player-field">
                   <div class="card-slot" data-slot="0"></div>
                   <div class="card-slot" data-slot="1"></div>
                   <div class="card-slot" data-slot="2"></div>
@@ -112,10 +115,12 @@
                 </div>
 
                 <!-- Controles do Jogo -->
-                <div class="text-center">
-                  <button id="summon-btn" class="btn btn-game me-2">🎭 Invocar</button>
-                  <button id="attack-btn" class="btn btn-battle me-2">⚔️ Batalhar</button>
-                  <button id="end-turn-btn" class="btn btn-outline-primary">⏭️ Finalizar Turno</button>
+                <div id="game-controls" class="text-center">
+                  <!--
+                    <button id="summon-btn" class="btn btn-game me-1">🎭 Invocar</button>
+                    <button id="attack-btn" class="btn btn-battle me-1">⚔️ Batalhar</button>
+                    <button id="end-turn-btn" class="btn btn-outline-primary">⏭️ Finalizar Turno</button>
+                  -->
                 </div>
               </div>
             </div>

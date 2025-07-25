@@ -1,11 +1,10 @@
-
 .game-container {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 .card-slot {
-  width: 90px;
+  width: 130px;
   height: 110px;
   border: 2px dashed #dee2e6;
   display: flex;
@@ -22,8 +21,8 @@
   background: rgba(13, 110, 253, 0.1);
 }
 .yugioh-card {
-  width: 90px;
-  height: 110px;
+  width: 120px;
+  height: 100px;
   border: 2px solid #495057;
   background: linear-gradient(145deg, #fff 0%, #f8f9fa 100%);
   padding: 4px;
@@ -34,6 +33,11 @@
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+.yugioh-card.in-fusion {
+  border-color: #ffc107;
+  background: linear-gradient(145deg, #fff3cd 0%, #ffeaa7 100%);
+}
+
 .yugioh-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -100,30 +104,5 @@
 }
 .btn-battle:hover {
   background: linear-gradient(145deg, #c82333 0%, #bd2130 100%);
-  color: white;
-}
-.start-screen {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-.start-btn {
-  background: linear-gradient(145deg, #28a745 0%, #20c997 100%);
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 15px 40px;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 5px 20px rgba(40, 167, 69, 0.4);
-  transition: all 0.3s ease;
-}
-.start-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
   color: white;
 }

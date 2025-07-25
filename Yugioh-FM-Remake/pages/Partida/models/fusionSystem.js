@@ -11,7 +11,8 @@ export class FusionSystem {
             { materials: [1, 4], result: 27 }, // Dragão Azul + Elfo Místico = Dragão Místico
             { materials: [2, 14], result: 28 }, // Mago Negro + Ryu-Kishin = Feiticeiro Negro
             { materials: [5, 17], result: 29 }, // Soldado da Pedra + Ansatsu = Titã de Ferro
-            { materials: [21, 24], result: 30 } // Dragão Flamejante + Dragão Temporal = Imperador Dragão
+            { materials: [21, 24], result: 30 }, // Dragão Flamejante + Dragão Temporal = Imperador Dragão
+            
         ];
 
         this.attributeCombinations = [

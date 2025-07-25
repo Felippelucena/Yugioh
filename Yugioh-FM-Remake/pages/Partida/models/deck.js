@@ -12,15 +12,19 @@ export class Deck {
         const basicCards = isOpponent ? 
             [[3,3], [4,3], [5,3], [8,3], [9,3], [10,3], [11,3], [12,3], [13,3], [14,3], [15,2], [17,2], [18,2], [19,2], [20,2]] : // IA
             [[1,3], [2,3], [3,3], [4,3], [5,3], [6,3], [7,3], [8,3], [9,3], [10,3], [11,2], [12,2], [13,2], [16,2], [17,2]]; // Jogador
-
+        let cont_id = 0;
         for (let i = 0; i < basicCards.length; i++) {
             const [cardId, quantity] = basicCards[i];
             for (let j = 0; j < quantity; j++) {
                 const originalCard = this.cardDatabase.getCard(cardId);
+
                 this.cards.push(originalCard.clone());
+                this.cards[cont_id].uniqueIdDeck = cont_id;
+                cont_id++;
             }
         }
     }
+    
     
     shuffle() {
         for (let i = this.cards.length - 1; i > 0; i--) {
